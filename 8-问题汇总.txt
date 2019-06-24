@@ -1,0 +1,31 @@
+1、componentDidMount  请求数据 渲染下拉菜单 返回过慢无法渲染。
+
+2、用From setFeildsValue 设置空， 无法点击编辑调用借口 返回默认值  setFeildsValue 为空后，
+无法再setFeildsValue上接口获取的值，还是显示为空白
+
+3、自定义From验证validator规则， 个别函数内无法拿到this.state的最新值，但是可以拿到 this.props最新的值
+
+4、刷新页面render内部，打印多次，具体是什么原因出发。
+
+5、下拉菜单需要 请选择 但是还要判断下拉框 不能为空  弹出message  就要用到validator
+
+6、为什么input框输入componentWillReceiveProps钩子一直在执行。
+
+7、componentDidMount 请求的数据，依赖请求过来的数据用promise.then方法 会等到拿到数据调用then方法。effect里面
+要return 返回值res， dispatch也要返回。  下一个数据请求，依赖上一个数据请求的返回值。
+
+8、需要把字符串转换成HTMl可以不用dangerouslySetInnerHTML， 场景：父给字传了商品详情的数据对象，子第一次
+在componentDidMount生命周期中可以通过this.props获取。由于子元素第一次渲染只会出发will render Did ，并不会
+componentWillReceiveProps。所以在did内部setSate可以出发componentDidUpdate来展示第一次的数据，以后每次
+属性改变就会出发WillReceiveProps。可以判断新老状态来减少SetSate，从而减少render渲染次数。
+
+9、pc端写手机预览，每次进入手机壳让内容滚动到顶部，通过ref获取包裹盒的dom元素，scrollHeight为整个内容高度，是不固定的
+通过scrollHeight高度来判断是否找对dom元素。componentWillReceiveProps(){this.node.scrollTop = 0}
+
+10、正则替换<p><br></p>，正则限制输入正整数 /^[1-9]\d*$/g，正数/^\d+(\.\d+)?$/，小数最多两位小数点。
+
+11、多个页面的搜索可否封装一个高阶组件 ，每次搜索完保存原有的搜索条件 分页  和屏幕当前位置。
+
+12、 pathRewrite: { '^/pmall-admin': '' }, 这个属性是请求后端的路径隐藏这个字段，而前台是可以见的，待验证？
+
+13、插入usb点击登录的时候，modal  里面的多有方法走完了 才会走组件comopoentdidmunut

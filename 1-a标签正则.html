@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>js正则删除a标签并保留内容</title>
+</head>
+<body>
+<a href="//www.jb51.net/">//www.jb51.net</span></a>
+<div id='box'></div>
+<script>
+var str=document.getElementsByTagName('a')[0].outerHTML;
+console.log("正则删除之前："+str);
+str=str.replace(/(<\/?a.*?>)|(<\/?span.*?>)/g, '');
+console.log("正则删除之后："+str);
+document.getElementById('box').innerHTML = str
+</script>
+</body>
+</html>

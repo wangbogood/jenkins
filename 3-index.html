@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            height:2000px;
+            background: skyblue;
+        }
+        .box { width: 1190px; margin: 0 auto; }
+        #btn{ width: 40px; height: 40px; background-color: red; position: fixed; right: 0px; bottom: 60px; background: url(2.jpg) no-repeat left top; }
+        #btn:hover{ background: url(2.jpg) no-repeat left -40px; }
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+            <div id='box'></div>
+        </div>
+        <!-- <a href="javascript:;" id="btn" title="回到顶部"></a> -->
+        <button id="btn" onclick="alert(1)">6666666666666</button>
+    <script>   
+window.onload  = function(){
+    var obtn = document.getElementById('btn');
+    // 支持ie11
+    obtn.onclick = function(){             
+        document.documentElement.scrollTop = 0;  
+      
+        alert(123)          
+    };
+}
+    </script>
+</body>
+</html>

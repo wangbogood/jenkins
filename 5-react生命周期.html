@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>React 实例</title>
+<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+
+<script type="text/babel">
+class Button extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {data: 0};
+      this.setNewNumber = this.setNewNumber.bind(this);
+  }
+  componentWillMount() {
+      alert('父亲------Component WILL MOUNT!')
+  }
+  componentDidMount() {
+    alert('父亲------Component DID MOUNT!')
+  }
+  setNewNumber() {
+    this.setState({data: this.state.data + 1})
+  }
+  render() {
+      alert('父亲------render')
+      return (
+         <div>
+            <button onClick = {this.setNewNumber}>INCREMENT</button>
+            <input/>
+            <Content myNumber = {this.state.data}></Content>
+         </div>
+      );
+    }
+}
+
+
+class Content extends React.Component {
+  componentWillMount() {
+      alert('Component WILL MOUNT!')
+  }
+  componentDidMount() {
+    alert('Component DID MOUNT!')
+  }
+  componentWillReceiveProps(newProps) {
+    alert('Component WILL RECEIVE PROPS!')
+  }
+  shouldComponentUpdate(newProps, newState) {
+        return true;
+  }
+  componentWillUpdate(nextProps, nextState) {
+    alert('Component WILL UPDATE!');
+  }
+  componentDidUpdate(prevProps, prevState) {
+    alert('Component DID UPDATE!')
+  }
+  componentWillUnmount() {
+    alert('Component WILL UNMOUNT!')
+  }
+ 
+    render() {
+        alert('render')
+      return (
+        <div>
+          <h3>{this.props.myNumber}</h3>
+        </div>
+      );
+    }
+}
+ReactDOM.render(
+   <div>
+      <Button />
+   </div>,
+  document.getElementById('example')
+);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>js正则删除a标签并保留内容</title>
+</head>
+<body>
+<div></div>
+<div id='box'>
+    <p>123123</p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <span></span>
+    <div>1232333</div>
+</div>
+<script>
+var str=document.getElementById('box').innerHTML;
+console.log("正则删除之前："+str);
+var reg = /<([a-z]+?)(?:\s+?[^>]*?)?>\s*?<\/\1>/ig;
+str=str.replace(reg, '');
+console.log("正则删除之后："+str);
+document.getElementById('box').innerHTML = str
+</script>
+</body>
+</html>
