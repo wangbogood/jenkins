@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>React 实例</title>
+<script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+<script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+<script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+
+<script type="text/babel">
+
+function hocWarper(OldComponent){
+  
+  return class extends React.Component {
+
+     componentDidMount(){
+       console.log(123)
+     }
+      render(){
+        return <OldComponent />
+      }
+  }
+}
+
+class Button extends React.Component {
+  constructor(props) {
+      super(props);
+      this.state = {data: 0};
+  }
+
+  componentDidMount() {
+    // alert('父亲------Component DID MOUNT!')
+  }
+
+  render() {
+      return (
+         <div>
+            <button>按钮</button>
+         </div>
+      );
+    }
+}
+var Qq = hocWarper(Button);
+console.log(Qq)
+
+ReactDOM.render(
+   <div>
+    <Qq></Qq>
+   </div>,
+  document.getElementById('example')
+);
+</script>
+
+</body>
+</html>

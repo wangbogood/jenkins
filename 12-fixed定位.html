@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0 auto;
+        }
+        html,body{
+            width: 100%;
+            height:100%;
+            overflow: auto
+        }
+        #box{
+            width: 100%;
+            height:100%;
+            border: 8px solid blue;
+            box-sizing: border-box;
+            overflow: auto
+        }
+        #con{
+            height:2000px;
+            border: 3px solid red;
+            overflow: auto;position:relative;
+
+        }
+        #child{
+            width:200px;
+            height:200px;
+            background:orange;
+            position:relative;
+            top:100px;
+        }
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <div id='box'>
+        <div id='con'>
+            <div id='child'></div>
+        </div>
+    </div>
+   
+
+</body>
+</html>

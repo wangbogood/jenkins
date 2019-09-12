@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html{
+            height: 100%;
+            position: relative;
+        }
+        body{
+            height: 100%;
+            overflow-y: scroll;
+            position: relative
+        }
+        *{
+            margin: 0;
+            padding:0;
+        }
+        #box1{
+            width:30%;
+            height:100%;
+            background:skyblue;
+            /* float: left; */
+            position: fixed;
+            top:0;
+        }
+        #box2{
+            width:70%;
+            height:100%;
+            background: orange;
+            float: right;
+            overflow: auto;
+            
+        }
+        #con{
+            height:2000px;
+            background: pink;
+            width:60%;
+            margin:0 auto;
+            margin:50px;
+            position: absolute;
+        }
+        #box3{
+            width:100px;
+            height:100px;
+            background: green;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+    <div id='box1'>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+    </div>
+    <div id='box2'>
+        <div id='con'>
+            <div id='box3'></div>
+        </div>
+    </div>
+</body>
+</html>
