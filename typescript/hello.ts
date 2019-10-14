@@ -1,7 +1,3 @@
-function greeter(person: string) {
-    return "Hello, " + person;
-}
-
-let user = [0, 1, 2];
-
-document.body.innerHTML = greeter();
+let a: number[] = [1, 2, 3, 4];
+let ro: ReadonlyArray<number> = a;
+ro[0] = 12

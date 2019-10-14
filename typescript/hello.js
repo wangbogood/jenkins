@@ -1,6 +1,5 @@
 "use strict";
-function greeter(person) {
-    return "Hello, " + person;
-}
-var user = [0, 1, 2];
-document.body.innerHTML = greeter();
+var a = [1, 2, 3, 4];
+var ro = a;
+ro[0] = 12;
+console.log(ro)
